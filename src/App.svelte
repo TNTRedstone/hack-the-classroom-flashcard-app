@@ -1,13 +1,9 @@
 <script>
-	let flashcardLists = ["None selected currently"];
+
 </script>
 
 <main>
-	{#each flashcardLists as flashcardList}
-		<select>
-			<option value={flashcardList}>{flashcardList}</option>
-		</select>
-	{/each}
+	<FlashcardAnswering></FlashcardAnswering>
 </main>
 
 <style></style>
