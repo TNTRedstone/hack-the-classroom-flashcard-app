@@ -1,5 +1,5 @@
 <script>
-
+	import FlashcardAnswering from "./FlashcardAnswering.svelte";
 </script>
 
 <main>
