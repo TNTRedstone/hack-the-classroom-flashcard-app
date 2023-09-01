@@ -1,10 +1,19 @@
-<script></script>
+<script>
+    function showInvisableCard() {
+        document.querySelector(".visablecard").style.display = "none";
+    }
+    function showVisableCard() {
+        document.querySelector(".visablecard").style.display = "block";
+    }
+</script>
 
 <main>
-    <div class="invisablecard card">
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <div on:click={showVisableCard} class="invisablecard card">
         <h2>side 2</h2>
     </div>
-    <div class="visablecard card">
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <div on:click={showInvisableCard} class="visablecard card">
         <h2>side 1</h2>
     </div>
 </main>
@@ -25,5 +34,13 @@
 
     .invisablecard {
         background-color: #003a61;
+    }
+
+    h2 {
+        user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
     }
 </style>
