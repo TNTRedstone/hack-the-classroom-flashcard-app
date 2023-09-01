@@ -1,0 +1,19 @@
+name: Automatically deploy to github pages
+
+on:
+  push:
+    branches:
+      - GH-master
+
+jobs:
+  deploy:
+  
+    runs-on: ubuntu-latest
+  
+    steps:
+      - uses: actions/checkout@latest
+      - uses: actions/setup-node@latest
+        with:
+          node_version: 18
+      - run: npm install
+      - run: npm run build
