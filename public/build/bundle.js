@@ -538,9 +538,10 @@ var app = (function () {
     			add_location(select, file$3, 15, 4, 517);
     			attr_dev(input, "type", "text");
     			add_location(input, file$3, 21, 8, 721);
+    			attr_dev(button, "class", "svelte-14c8aax");
     			add_location(button, file$3, 22, 8, 786);
     			add_location(div, file$3, 20, 4, 706);
-    			attr_dev(main, "class", "svelte-10qjjto");
+    			attr_dev(main, "class", "svelte-14c8aax");
     			add_location(main, file$3, 14, 0, 505);
     		},
     		l: function claim(nodes) {
@@ -707,10 +708,18 @@ var app = (function () {
 
     function create_fragment$2(ctx) {
     	let main;
-    	let div0;
-    	let h20;
+    	let link0;
+    	let t0;
+    	let link1;
     	let t1;
+    	let link2;
+    	let t2;
+    	let div0;
+    	let span0;
+    	let h20;
+    	let t4;
     	let div1;
+    	let span1;
     	let h21;
     	let mounted;
     	let dispose;
@@ -718,34 +727,64 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			main = element("main");
+    			link0 = element("link");
+    			t0 = space();
+    			link1 = element("link");
+    			t1 = space();
+    			link2 = element("link");
+    			t2 = space();
     			div0 = element("div");
+    			span0 = element("span");
     			h20 = element("h2");
     			h20.textContent = "side 2";
-    			t1 = space();
+    			t4 = space();
     			div1 = element("div");
+    			span1 = element("span");
     			h21 = element("h2");
     			h21.textContent = "side 1";
-    			attr_dev(h20, "class", "svelte-1oj7iuo");
-    			add_location(h20, file$2, 12, 8, 395);
-    			attr_dev(div0, "class", "invisablecard card svelte-1oj7iuo");
-    			add_location(div0, file$2, 11, 4, 326);
-    			attr_dev(h21, "class", "svelte-1oj7iuo");
-    			add_location(h21, file$2, 16, 8, 559);
-    			attr_dev(div1, "class", "visablecard card svelte-1oj7iuo");
-    			add_location(div1, file$2, 15, 4, 490);
-    			attr_dev(main, "class", "svelte-1oj7iuo");
-    			add_location(main, file$2, 9, 0, 252);
+    			attr_dev(link0, "rel", "preconnect");
+    			attr_dev(link0, "href", "https://fonts.googleapis.com");
+    			add_location(link0, file$2, 10, 4, 274);
+    			attr_dev(link1, "rel", "preconnect");
+    			attr_dev(link1, "href", "https://fonts.gstatic.com");
+    			attr_dev(link1, "crossorigin", "");
+    			add_location(link1, file$2, 11, 4, 341);
+    			attr_dev(link2, "href", "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,900&display=swap");
+    			attr_dev(link2, "rel", "stylesheet");
+    			add_location(link2, file$2, 12, 4, 417);
+    			attr_dev(h20, "class", "svelte-qwrwoc");
+    			add_location(h20, file$2, 19, 12, 713);
+    			attr_dev(span0, "class", "svelte-qwrwoc");
+    			add_location(span0, file$2, 18, 8, 693);
+    			attr_dev(div0, "class", "invisablecard card svelte-qwrwoc");
+    			add_location(div0, file$2, 17, 4, 624);
+    			attr_dev(h21, "class", "svelte-qwrwoc");
+    			add_location(h21, file$2, 25, 12, 914);
+    			attr_dev(span1, "class", "svelte-qwrwoc");
+    			add_location(span1, file$2, 24, 8, 894);
+    			attr_dev(div1, "class", "visablecard card svelte-qwrwoc");
+    			add_location(div1, file$2, 23, 4, 825);
+    			attr_dev(main, "class", "svelte-qwrwoc");
+    			add_location(main, file$2, 9, 0, 262);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
-    			append_dev(main, div0);
-    			append_dev(div0, h20);
+    			append_dev(main, link0);
+    			append_dev(main, t0);
+    			append_dev(main, link1);
     			append_dev(main, t1);
+    			append_dev(main, link2);
+    			append_dev(main, t2);
+    			append_dev(main, div0);
+    			append_dev(div0, span0);
+    			append_dev(span0, h20);
+    			append_dev(main, t4);
     			append_dev(main, div1);
-    			append_dev(div1, h21);
+    			append_dev(div1, span1);
+    			append_dev(span1, h21);
 
     			if (!mounted) {
     				dispose = [
@@ -778,11 +817,11 @@ var app = (function () {
     }
 
     function showInvisableCard() {
-    	document.querySelector(".visablecard").style.display = "none";
+    	document.querySelector(".visablecard").style.visibility = "hidden";
     }
 
     function showVisableCard() {
-    	document.querySelector(".visablecard").style.display = "block";
+    	document.querySelector(".visablecard").style.visibility = "visible";
     }
 
     function instance$2($$self, $$props, $$invalidate) {

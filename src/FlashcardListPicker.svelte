@@ -30,4 +30,8 @@
         flex-direction: column;
         align-items: center;
     }
+
+    button {
+        user-select: none;
+    }
 </style>

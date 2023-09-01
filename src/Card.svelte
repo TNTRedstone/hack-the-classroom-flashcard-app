@@ -1,20 +1,30 @@
 <script>
     function showInvisableCard() {
-        document.querySelector(".visablecard").style.display = "none";
+        document.querySelector(".visablecard").style.visibility = "hidden";
     }
     function showVisableCard() {
-        document.querySelector(".visablecard").style.display = "block";
+        document.querySelector(".visablecard").style.visibility = "visible";
     }
 </script>
 
 <main>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,900&display=swap"
+        rel="stylesheet"
+    />
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div on:click={showVisableCard} class="invisablecard card">
-        <h2>side 2</h2>
+        <span>
+            <h2>side 2</h2>
+        </span>
     </div>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div on:click={showInvisableCard} class="visablecard card">
-        <h2>side 1</h2>
+        <span>
+            <h2>side 1</h2>
+        </span>
     </div>
 </main>
 
@@ -35,6 +45,7 @@
         margin-right: auto;
         margin-top: auto;
         margin-bottom: auto;
+        border-radius: 5px;
     }
 
     .visablecard {
@@ -52,5 +63,16 @@
         -khtml-user-select: none;
         -webkit-user-select: none;
         -o-user-select: none;
+        font-family: "poppins";
+    }
+    div {
+        display: table;
+        height: 100px;
+        width: 100%;
+        text-align: center;
+    }
+    span {
+        display: table-cell;
+        vertical-align: middle;
     }
 </style>
