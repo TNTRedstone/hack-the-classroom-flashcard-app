@@ -18,8 +18,16 @@
             <option value={flashcardList}>{flashcardList}</option>
         {/each}
     </select>
-    <input bind:value={newFlashcardListName} type="text" />
-    <button on:click={addFlashcardList}>Add</button>
+    <div>
+        <input bind:value={newFlashcardListName} type="text" />
+        <button on:click={addFlashcardList}>Add</button>
+    </div>
 </main>
 
-<style></style>
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+</style>

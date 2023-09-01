@@ -25,6 +25,16 @@
 
     .card {
         position: absolute;
+        width: 350px;
+        height: 175px;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 
     .visablecard {

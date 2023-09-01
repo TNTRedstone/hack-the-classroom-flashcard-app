@@ -505,6 +505,7 @@ var app = (function () {
     	let main;
     	let select;
     	let t0;
+    	let div;
     	let input;
     	let t1;
     	let button;
@@ -528,6 +529,7 @@ var app = (function () {
     			}
 
     			t0 = space();
+    			div = element("div");
     			input = element("input");
     			t1 = space();
     			button = element("button");
@@ -535,8 +537,10 @@ var app = (function () {
     			if (/*selectedList*/ ctx[2] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[4].call(select));
     			add_location(select, file$3, 15, 4, 517);
     			attr_dev(input, "type", "text");
-    			add_location(input, file$3, 20, 4, 706);
-    			add_location(button, file$3, 21, 4, 767);
+    			add_location(input, file$3, 21, 8, 721);
+    			add_location(button, file$3, 22, 8, 786);
+    			add_location(div, file$3, 20, 4, 706);
+    			attr_dev(main, "class", "svelte-10qjjto");
     			add_location(main, file$3, 14, 0, 505);
     		},
     		l: function claim(nodes) {
@@ -554,10 +558,11 @@ var app = (function () {
 
     			select_option(select, /*selectedList*/ ctx[2], true);
     			append_dev(main, t0);
-    			append_dev(main, input);
+    			append_dev(main, div);
+    			append_dev(div, input);
     			set_input_value(input, /*newFlashcardListName*/ ctx[1]);
-    			append_dev(main, t1);
-    			append_dev(main, button);
+    			append_dev(div, t1);
+    			append_dev(div, button);
 
     			if (!mounted) {
     				dispose = [
@@ -720,15 +725,15 @@ var app = (function () {
     			div1 = element("div");
     			h21 = element("h2");
     			h21.textContent = "side 1";
-    			attr_dev(h20, "class", "svelte-bi4rxq");
+    			attr_dev(h20, "class", "svelte-1oj7iuo");
     			add_location(h20, file$2, 12, 8, 395);
-    			attr_dev(div0, "class", "invisablecard card svelte-bi4rxq");
+    			attr_dev(div0, "class", "invisablecard card svelte-1oj7iuo");
     			add_location(div0, file$2, 11, 4, 326);
-    			attr_dev(h21, "class", "svelte-bi4rxq");
+    			attr_dev(h21, "class", "svelte-1oj7iuo");
     			add_location(h21, file$2, 16, 8, 559);
-    			attr_dev(div1, "class", "visablecard card svelte-bi4rxq");
+    			attr_dev(div1, "class", "visablecard card svelte-1oj7iuo");
     			add_location(div1, file$2, 15, 4, 490);
-    			attr_dev(main, "class", "svelte-bi4rxq");
+    			attr_dev(main, "class", "svelte-1oj7iuo");
     			add_location(main, file$2, 9, 0, 252);
     		},
     		l: function claim(nodes) {
