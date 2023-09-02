@@ -1,13 +1,38 @@
 <script>
-    export let front;
-    export let back;
-
     function showInvisableCard() {
         document.querySelector(".visablecard").style.visibility = "hidden";
     }
-    function showVisableCard() {
-        document.querySelector(".visablecard").style.visibility = "visible";
+
+    function showVisibleCard() {
+        document.querySelector(".visablecard").style.visibility = "visable";
     }
+
+    function handleDoneClick() {
+        showVisibleCard();
+    }
+
+    let front;
+    let back;
+    function updateFlashcardContent() {
+        let flashcardData = JSON.parse(localStorage.getItem("flashcardData")); // Parse the stored data back to an object
+        if (flashcardData) {
+            for (let i = 0; i < flashcardData.data.length; i++) {
+                front = flashcardData.data[i].front;
+                back = flashcardData.data[i].back;
+            }
+            // Update the content of your flashcards here
+            try {
+                document.getElementById("invisCardText").textContent = back;
+                document.getElementById("visCardText").textContent = front;
+            } catch (e) {
+                null;
+            }
+        }
+    }
+
+    // Update flashcard content initially and set an interval to periodically check for updates
+    updateFlashcardContent();
+    setInterval(updateFlashcardContent, 5000); // Check every 5 seconds (adjust as needed)
 </script>
 
 <main>
@@ -18,15 +43,16 @@
         rel="stylesheet"
     />
     <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <div on:click={showVisableCard} class="invisablecard card">
+    <div on:click={showVisibleCard} class="invisablecard card">
         <span>
-            <h2>{back}</h2>
+            <h2 id="invisCardText">{back}</h2>
+            <button on:click={handleDoneClick}>Done</button>
         </span>
     </div>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div on:click={showInvisableCard} class="visablecard card">
         <span>
-            <h2>{front}</h2>
+            <h2 id="invisCardText">{front}</h2>
         </span>
     </div>
 </main>

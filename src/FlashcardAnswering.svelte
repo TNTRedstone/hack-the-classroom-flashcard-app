@@ -1,20 +1,22 @@
 <script>
-    import FlashcardListPicker from "./FlashcardListPicker.svelte";
     import Card from "./Card.svelte";
-    
-    let flashcardData = []; // Initialize an array to store the flashcard data
-    
-    const handleNewCard = (e) => {
-        flashcardData = e.detail; // Update the flashcardData array when a new card is added
-    };
+    import FlashcardListPicker from "./FlashcardListPicker.svelte";
+    let flashcardData = null; // Initialize it with a default value or null
+
+    function getFlashcardData(e) {
+        flashcardData = e.detail;
+        console.log(flashcardData);
+        localStorage.setItem("flashcardData", JSON.stringify(flashcardData));
+    }
 </script>
 
 <main>
-    <FlashcardListPicker on:handleNewCard={handleNewCard}></FlashcardListPicker>
-    
-    {#if flashcardData.length > 0}
-        {#each flashcardData as card, index (card.id)}
-            <Card front={card.front} back={card.back}></Card>
-        {/each}
+    <FlashcardListPicker on:sendFlashcardLists={getFlashcardData} />
+    {#if flashcardData}
+        <div id="cardlocation">
+            <Card/>
+        </div>
+    {:else}
+        <p>No flashcard data available.</p>
     {/if}
 </main>

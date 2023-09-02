@@ -7,12 +7,15 @@
     let newCardFront = "";
     let newCardBack = "";
 
+    dispatch("sendFlashcardLists", flashcardLists[selectedListIndex]);
+
     function addFlashcardList() {
         if (newFlashcardListName.trim() !== "") {
             flashcardLists.push({ name: newFlashcardListName, data: [] });
             selectedListIndex = flashcardLists.length - 1;
             newFlashcardListName = "";
         }
+        sendFlashcardLists();
     }
 
     function addCard() {
@@ -20,12 +23,17 @@
             let newCard = {
                 front: newCardFront,
                 back: newCardBack,
+                completed: false
             };
             flashcardLists[selectedListIndex].data.push(newCard);
             newCardFront = "";
             newCardBack = "";
-            dispatch('handleNewCard', flashcardLists[selectedListIndex].data);
         }
+        sendFlashcardLists();
+    }
+
+    function sendFlashcardLists() {
+        dispatch("sendFlashcardLists", flashcardLists[selectedListIndex]);
     }
 </script>
 
