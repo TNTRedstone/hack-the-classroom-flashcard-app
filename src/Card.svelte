@@ -1,4 +1,7 @@
 <script>
+    export let front;
+    export let back;
+
     function showInvisableCard() {
         document.querySelector(".visablecard").style.visibility = "hidden";
     }
@@ -17,13 +20,13 @@
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div on:click={showVisableCard} class="invisablecard card">
         <span>
-            <h2>side 2</h2>
+            <h2>{back}</h2>
         </span>
     </div>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div on:click={showInvisableCard} class="visablecard card">
         <span>
-            <h2>side 1</h2>
+            <h2>{front}</h2>
         </span>
     </div>
 </main>

@@ -1,15 +1,17 @@
 <script>
+    import { createEventDispatcher } from "svelte";
+    let dispatch = createEventDispatcher();
     let flashcardLists = [{ name: "None selected currently", data: [] }];
     let newFlashcardListName = "";
-    let selectedListIndex = 0; // Initialize with the index of the default list
+    let selectedListIndex = 0;
     let newCardFront = "";
     let newCardBack = "";
 
     function addFlashcardList() {
         if (newFlashcardListName.trim() !== "") {
             flashcardLists.push({ name: newFlashcardListName, data: [] });
-            selectedListIndex = flashcardLists.length - 1; // Select the newly added option
-            newFlashcardListName = ""; // Clear the input field after adding
+            selectedListIndex = flashcardLists.length - 1;
+            newFlashcardListName = "";
         }
     }
 
@@ -22,6 +24,7 @@
             flashcardLists[selectedListIndex].data.push(newCard);
             newCardFront = "";
             newCardBack = "";
+            dispatch('handleNewCard', flashcardLists[selectedListIndex].data);
         }
     }
 </script>
@@ -37,8 +40,8 @@
         <button on:click={addFlashcardList}>Add</button>
     </div>
     <div>
-        <input type="text" placeholder="front of card" bind:value={newCardFront}>
-        <input type="text" placeholder="back of card" bind:value={newCardBack}>
+        <input type="text" placeholder="front of card" bind:value={newCardFront} />
+        <input type="text" placeholder="back of card" bind:value={newCardBack} />
         <button on:click={addCard}>Add</button>
     </div>
 </main>
